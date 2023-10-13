@@ -30,6 +30,10 @@ class PriceQtyDisplayServiceProvider extends ServiceProvider
         Event::listen('bagisto.shop.products.price.after', function($viewRenderEventManager) {
             $viewRenderEventManager->addTemplate('priceqtydisplay::shop.index');
         });
+
+        Event::listen('bagisto.shop.layout.head', function($viewRenderEventManager) {
+            $viewRenderEventManager->addTemplate('priceqtydisplay::shop.layouts.style');
+        });
     }
 
     /**
