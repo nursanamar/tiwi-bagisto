@@ -223,7 +223,8 @@ return [
         Webkul\Theme\Providers\ThemeServiceProvider::class,
         Webkul\User\Providers\UserServiceProvider::class,
 
-        B2B\PriceQtyDisplay\Providers\PriceQtyDisplayServiceProvider::class
+        B2B\PriceQtyDisplay\Providers\PriceQtyDisplayServiceProvider::class,
+        B2B\PriceRequest\Providers\PriceRequestServiceProvider::class
     ])->toArray(),
 
     /*

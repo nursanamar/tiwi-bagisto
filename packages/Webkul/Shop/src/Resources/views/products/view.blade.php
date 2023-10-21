@@ -354,7 +354,7 @@
 
                                     {!! view_render_event('bagisto.shop.products.view.quantity.before', ['product' => $product]) !!}
 
-                                    @if ($product->getTypeInstance()->showQuantityBox())
+                                    @if ($product->getTypeInstance()->showQuantityBox() && !$product->is_need_request())
                                         <x-shop::quantity-changer
                                             name="quantity"
                                             value="1"
@@ -368,13 +368,15 @@
                                     <!-- Add To Cart Button -->
                                     {!! view_render_event('bagisto.shop.products.view.add_to_cart.before', ['product' => $product]) !!}
 
-                                    <button
-                                        type="submit"
-                                        class="secondary-button w-full max-w-full"
-                                        {{ ! $product->isSaleable(1) ? 'disabled' : '' }}
-                                    >
-                                        @lang('shop::app.products.view.add-to-cart')
-                                    </button>
+                                    @if (!$product->is_need_request())
+                                        <button
+                                            type="submit"
+                                            class="secondary-button w-full max-w-full"
+                                            {{ ! $product->isSaleable(1) ? 'disabled' : '' }}
+                                        >
+                                            @lang('shop::app.products.view.add-to-cart')
+                                        </button>
+                                    @endif
 
                                     {!! view_render_event('bagisto.shop.products.view.add_to_cart.after', ['product' => $product]) !!}
                                 </div>
@@ -382,7 +384,7 @@
                                 <!-- Buy Now Button -->
                                 {!! view_render_event('bagisto.shop.products.view.buy_now.before', ['product' => $product]) !!}
 
-                                @if (core()->getConfigData('catalog.products.storefront.buy_now_button_display'))
+                                @if (core()->getConfigData('catalog.products.storefront.buy_now_button_display') && !$product->is_need_request())
                                     <button
                                         type="submit"
                                         class="primary-button w-full max-w-[470px] mt-[20px]"
@@ -391,6 +393,24 @@
                                     >
                                         @lang('shop::app.products.view.buy-now')
                                     </button>
+                                @endif
+
+                                @if($product->is_need_request())
+                                    
+                                    @php
+                                        $message = "Mau tanya untuk harga barang ini " . route('shop.product_or_category.index', $product->url_key);
+                                        $phone = core()->getConfigData("price_request.settings.contacts.phone");
+                                        $wa_phone = preg_replace('/^08|\+62/m',"62",$phone);
+                                        $url = "https://wa.me/".$wa_phone."?" . http_build_query(["text" => $message]);
+                                    @endphp
+
+                                    <a
+                                        class="primary-button w-full max-w-[470px] mt-[20px]"
+                                        target="_blank"
+                                        href="{{ $url }}"
+                                    >
+                                        Request For Price
+                                    </a>
                                 @endif
 
                                 {!! view_render_event('bagisto.shop.products.view.buy_now.after', ['product' => $product]) !!}
