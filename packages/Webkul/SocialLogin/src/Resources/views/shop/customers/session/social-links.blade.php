@@ -8,12 +8,12 @@
             $icon = explode('_', $social); 
         @endphp
 
-        <a
+        {{-- <a
             href="{{ route('customer.social-login.index', $icon[1]) }}"
             class="transition-all hover:opacity-[0.8]"
             aria-label="{{ $icon[0] }}"
         >
             @include('social_login::icons.' . $icon[1])
-        </a>
+        </a> --}}
     @endforeach
 </div>

@@ -25,7 +25,7 @@
                     aria-label="Bagisto "
                 >
                     <img
-                        src="{{ bagisto_asset('images/logo.svg') }}"
+                        src="{{asset('themes/admin/default/build/assets/logo-full.png')}}"
                         alt="Bagisto "
                         width="131"
                         height="29"
@@ -64,7 +64,7 @@
                         <div class="grid gap-[25px] flex-1">
                             <!-- Cart Mass Action Container -->
                             <div class="flex justify-between items-center pb-[10px] border-b-[1px] border-[#E9E9E9] max-sm:block">
-                                <div class="flex select-none items-center">
+                                <div class="flex items-center select-none">
                                     <input
                                         type="checkbox"
                                         id="select-all"
@@ -209,7 +209,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="max-sm:hidden text-right">
+                                    <div class="text-right max-sm:hidden">
                                         <p 
                                             class="text-[18px] font-semibold" 
                                             v-text="item.formatted_total"

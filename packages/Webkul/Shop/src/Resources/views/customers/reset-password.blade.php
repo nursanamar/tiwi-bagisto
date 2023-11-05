@@ -24,7 +24,7 @@
                 aria-label="Bagisto "
             >
                 <img
-                    src="{{ bagisto_asset('images/logo.svg') }}"
+                    src="{{asset('/themes/admin/default/build/assets/logo-full.png')}}"
                     alt="Bagisto "
                     width="131"
                     height="29"

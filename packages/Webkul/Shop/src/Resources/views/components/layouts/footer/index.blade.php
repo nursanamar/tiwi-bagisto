@@ -20,7 +20,7 @@
 
 <footer class="mt-[36px] bg-lightOrange  max-sm:mt-[30px]">
     @if ($customization)
-        <div class="flex gap-x-[25px] gap-y-[30px] justify-between p-[60px] max-1060:flex-wrap max-1060:flex-col-reverse max-sm:px-[15px]">
+        {{-- <div class="flex gap-x-[25px] gap-y-[30px] justify-between p-[60px] max-1060:flex-wrap max-1060:flex-col-reverse max-sm:px-[15px]">
             <div class="flex gap-[85px] items-start flex-wrap max-1180:gap-[25px] max-1060:justify-between">
                 @if ($customization->options)
                     @foreach ($customization->options as $footerLinkSection)
@@ -43,7 +43,6 @@
                 @endif
             </div>
             
-            {{-- News Letter subscription --}}
             @if(core()->getConfigData('customer.settings.newsletter.subscription'))
                 <div class="grid gap-[10px]">
                     <p class="max-w-[288px] leading-[45px] text-[30px] italic text-navyBlue">
@@ -87,14 +86,14 @@
                     </x-shop::form>
                 </div>
             @endif
-        </div>
+        </div> --}}
     @endif
 
-    <div class="flex justify-between  px-[60px] py-[13px] bg-[#F1EADF]">
+    {{-- <div class="flex justify-between  px-[60px] py-[13px] bg-[#F1EADF]">
         <p class="text-[14px] text-[#4D4D4D]">
             @lang('shop::app.components.layouts.footer.footer-text')
         </p>
-    </div>
+    </div> --}}
 </footer>
 
 {!! view_render_event('bagisto.shop.layout.footer.after') !!}
