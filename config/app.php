@@ -224,7 +224,8 @@ return [
         Webkul\User\Providers\UserServiceProvider::class,
 
         B2B\PriceQtyDisplay\Providers\PriceQtyDisplayServiceProvider::class,
-        B2B\PriceRequest\Providers\PriceRequestServiceProvider::class
+        B2B\PriceRequest\Providers\PriceRequestServiceProvider::class,
+        B2B\AdminOrderCreation\Providers\AdminOrderCreationServiceProvider::class
     ])->toArray(),
 
     /*

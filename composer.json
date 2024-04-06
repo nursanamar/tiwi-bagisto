@@ -90,7 +90,8 @@
             "Webkul\\Theme\\": "packages/Webkul/Theme/src",
             "Webkul\\User\\": "packages/Webkul/User/src",
             "B2B\\PriceQtyDisplay\\": "packages/B2B/PriceQtyDisplay/src",
-            "B2B\\PriceRequest\\": "packages/B2B/PriceRequest/src"
+            "B2B\\PriceRequest\\": "packages/B2B/PriceRequest/src",
+            "B2B\\AdminOrderCreation\\": "packages/B2B/AdminOrderCreation/src"
         }
     },
     "autoload-dev": {
