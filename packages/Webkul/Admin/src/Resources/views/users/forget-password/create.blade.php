@@ -8,8 +8,8 @@
         <div class="flex flex-col gap-[20px] items-center">
             {{-- Logo --}}
             <img 
-                class="w-max" 
-                src="{{ bagisto_asset('images/logo.svg') }}" 
+                style="height: 40px; width: 120px;"
+                src="{{asset('themes/admin/default/build/assets/logo-full.png')}}" 
                 alt="Bagisto Logo"
             >
 

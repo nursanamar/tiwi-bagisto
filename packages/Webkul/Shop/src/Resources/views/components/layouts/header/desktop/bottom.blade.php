@@ -11,7 +11,7 @@
             aria-label="Bagisto "
         >
             <img
-                src="{{ bagisto_asset('images/logo.svg') }}"
+                src="{{asset('themes/admin/default/build/assets/logo-full.png')}}"
                 width="131"
                 height="29"
                 alt="Bagisto"
@@ -216,7 +216,7 @@
                             v-for="pairCategoryChildren in pairCategoryChildren(category)"
                         >
                             <template v-for="secondLevelCategory in pairCategoryChildren">
-                                <p class="text-navyBlue font-medium">
+                                <p class="font-medium text-navyBlue">
                                     <a
                                         :href="secondLevelCategory.url"
                                         v-text="secondLevelCategory.name"

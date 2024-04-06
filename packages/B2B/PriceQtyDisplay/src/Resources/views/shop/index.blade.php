@@ -4,14 +4,15 @@
     $qtyPrices = $priceHelper->getQtyPrices($product);
 @endphp
 
+
 <div class="main">
     <!--Prices based on qty -->
     @if ($qtyPrices)
         <div>
-            <table class="table">
+            <table class="qty-price" background-color="yellow !important">
                 <thead>
-                    <td>Qty</td>
-                    <td>Price</td>
+                    <th>Qty</th>
+                    <th>Price</th>
                 </thead>
                 <tbody>
                     @foreach ($qtyPrices as $qtyPrice)

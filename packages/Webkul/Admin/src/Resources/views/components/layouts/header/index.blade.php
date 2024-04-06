@@ -17,7 +17,7 @@
             class="place-self-start -mt-[4px]"            
         >
             @if (core()->getConfigData('general.design.admin_logo.logo_image', core()->getCurrentChannelCode()))
-                <img src="{{ Storage::url(core()->getConfigData('general.design.admin_logo.logo_image', core()->getCurrentChannelCode())) }}" alt="{{ config('app.name') }}" style="height: 40px; width: 110px;"/>
+                <img src="{{asset('themes/admin/default/build/assets/logo-full.png')}}" alt="{{ config('app.name') }}" style="height: 40px; width: 110px;"/>
             @else
                 @if (! request()->cookie('dark_mode'))
                     <img src="{{ bagisto_asset('images/logo.svg') }}" id="logo-image">
@@ -65,7 +65,7 @@
 
        {{-- Notification Component --}}
         <v-notifications {{ $attributes }}>
-            <span class="flex relative">
+            <span class="relative flex">
                 <span 
                     class="icon-notification p-[6px] rounded-[6px] text-[24px] cursor-pointer transition-all hover:bg-gray-100 dark:hover:bg-gray-950" 
                     title="@lang('admin::app.components.layouts.header.notifications')"
@@ -137,7 +137,7 @@
 >
     <!-- Drawer Header -->
     <x-slot:header>
-        <div class="flex justify-between items-center">
+        <div class="flex items-center justify-between">
             @if (core()->getConfigData('general.design.admin_logo.logo_image', core()->getCurrentChannelCode()))
                 <img src="{{ Storage::url(core()->getConfigData('general.design.admin_logo.logo_image', core()->getCurrentChannelCode())) }}" alt="{{ config('app.name') }}" style="height: 40px; width: 110px;"/>
             @else
@@ -261,7 +261,7 @@
 
                                 <!-- Right Information -->
                                 <div class="grid gap-[4px] place-content-center text-right">
-                                    <p class="text-gray-600 dark:text-gray-300 font-semibold">
+                                    <p class="font-semibold text-gray-600 dark:text-gray-300">
                                         @{{ product.formatted_price }}
                                     </p>
                                 </div>
@@ -519,7 +519,7 @@
         <x-admin::dropdown position="bottom-{{ core()->getCurrentLocale()->direction === 'ltr' ? 'right' : 'left' }}">
             <!-- Notification Toggle -->
             <x-slot:toggle>
-                <span class="flex relative">
+                <span class="relative flex">
                     <span
                         class="icon-notification p-[6px] rounded-[6px] text-[24px] text-red cursor-pointer transition-all hover:bg-gray-100 dark:hover:bg-gray-950" 
                         title="@lang('admin::app.components.layouts.header.notifications')"
