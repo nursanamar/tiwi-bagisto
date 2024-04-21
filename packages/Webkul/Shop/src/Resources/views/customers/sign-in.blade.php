@@ -34,19 +34,19 @@
         
         {{-- Form Container --}}
         <div
-            class="w-full max-w-[870px] m-auto px-[90px] py-[60px] border border-[#E9E9E9] rounded-[12px] max-md:px-[30px] max-md:py-[30px]"
+            class="max-w-[400px] m-auto px-[20px] py-[20px] border border-[#E9E9E9] rounded-[12px] max-md:px-[30px] max-md:py-[30px]"
         >
-            <h1 class="text-[40px] font-dmserif max-sm:text-[25px]">
+            <h1 class="text-[20px] font-dmserif max-sm:text-[25px]">
                 @lang('shop::app.customers.login-form.page-title')
             </h1>
 
-            <p class="mt-[15px] text-[#6E6E6E] text-[20px] max-sm:text-[16px]">
+            <p class="mt-[15px] text-[#6E6E6E] text-[15px] max-sm:text-[16px]">
                 @lang('shop::app.customers.login-form.form-login-text')
             </p>
 
             {!! view_render_event('bagisto.shop.customers.login.before') !!}
 
-            <div class="mt-[60px] rounded max-sm:mt-[30px]">
+            <div class="mt-[20px] rounded max-sm:mt-[30px]">
                 <x-shop::form :action="route('shop.customer.session.create')">
                     <x-shop::form.control-group class="mb-4">
                         <x-shop::form.control-group.label class="required">
@@ -56,7 +56,7 @@
                         <x-shop::form.control-group.control
                             type="email"
                             name="email"
-                            class="!p-[20px_25px] rounded-lg"
+                            class="!p-[15px_20px] rounded-lg"
                             value=""
                             rules="required|email"
                             :label="trans('shop::app.customers.login-form.email')"
@@ -78,7 +78,7 @@
                         <x-shop::form.control-group.control
                             type="password"
                             name="password"
-                            class="!p-[20px_25px] rounded-lg"
+                            class="!p-[15px_20px] rounded-lg"
                             value=""
                             id="password"
                             rules="required|min:6"
@@ -135,9 +135,9 @@
                         </div>
                     @endif
 
-                    <div class="flex gap-[36px] flex-wrap mt-[30px] items-center">
+                    <div class="flex gap-[36px] flex-wrap mt-[20px] items-center">
                         <button
-                            class="primary-button block w-full max-w-[374px] py-[16px] px-[43px] m-0 ml-[0px] mx-auto rounded-[18px] text-[16px] text-center"
+                            class="primary-button block w-full max-w-[374px] py-[6px] px-[33px] m-0 ml-[0px] mx-auto rounded-[18px] text-[16px] text-center"
                             type="submit"
                         >
                             @lang('shop::app.customers.login-form.button-title')
@@ -150,7 +150,7 @@
                 </x-shop::form>
             </div>
 
-            <p class="mt-[20px] text-[#6E6E6E] font-medium">
+            <p class="mt-[5px] text-[#6E6E6E] font-medium">
                 @lang('shop::app.customers.login-form.new-customer')
 
                 <a
@@ -162,7 +162,7 @@
             </p>
         </div>
 
-        <p class="mt-[30px] mb-[15px] text-center text-[#6E6E6E] text-xs">
+        <p class="mt-[10px] mb-[10px] text-center text-[#6E6E6E] text-xs">
             @lang('shop::app.customers.login-form.footer')
         </p>
     </div>
