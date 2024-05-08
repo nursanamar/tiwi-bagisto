@@ -109,6 +109,13 @@
                             >
                                 @lang('shop::app.components.layouts.header.sign-up')
                             </a>
+
+                            <a
+                                href="{{ url('admin') }}"
+                                class="primary-button block w-max px-[29px] mx-auto m-0 ml-[0px] rounded-[18px] text-base text-center"
+                            >
+                               Admin
+                            </a>
                         </div>
                     </x-slot:content>
                 @endguest
